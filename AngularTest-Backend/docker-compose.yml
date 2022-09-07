@@ -15,4 +15,4 @@ services:
       - angulartest-backend
     build: ./../AngularTest-Frontend
     ports:
-      - 4700:4700
+      - 4200:4200

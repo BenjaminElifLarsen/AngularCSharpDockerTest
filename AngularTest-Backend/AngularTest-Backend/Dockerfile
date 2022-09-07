@@ -15,9 +15,13 @@ RUN dotnet restore "AngularTest-Backend/AngularTest-Backend.csproj"
 COPY . .
 WORKDIR "/src/AngularTest-Backend"
 RUN dotnet build "AngularTest-Backend.csproj" -c Release -o /app/build
+RUN dotnet dev-certs https
+RUN dotnet dev-certs https --trust
 
 FROM build AS publish
 RUN dotnet publish "AngularTest-Backend.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet dev-certs https
+RUN dotnet dev-certs https --trust
 
 FROM base AS final
 WORKDIR /app
