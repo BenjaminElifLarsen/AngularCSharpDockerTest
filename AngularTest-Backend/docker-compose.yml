@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   angulartest-backend:
-    image: ${DOCKER_REGISTRY-}angulartestbackend
+    #image: ${DOCKER_REGISTRY-}angulartestbackend
     build:
       context: .
       dockerfile: AngularTest-Backend\Dockerfile
@@ -13,6 +13,6 @@ services:
   frontend:
     depends_on:
       - angulartest-backend
-    build: .\..\AngularTest-Frontend
+    build: ./../AngularTest-Frontend
     ports:
       - 4700:4700

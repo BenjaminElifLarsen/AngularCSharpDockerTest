@@ -1,20 +1,27 @@
-From node:8.9.3
+#From amd64/node:latest
+From amd64/node:latest
 
 # set working directory
-RUN mkdir /usr/src/app
-WORKDIR /usr/src/app
+WORKDIR /app
 
-# add `/usr/src/app/node_modules/.bin` to $PATH
-ENV PATH /usr/src/app/node_modules/.bin:$PATH
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
+
+#RUN apt-get update && apt-get upgrade -y && \
+#    apt-get install -y nodejs \
+#    npm  
+
+#RUN apt-get update && apt-get upgrade -y
 
 # install and cache app dependencies
-COPY package.json /usr/src/app/package.json
+COPY package.json /package.json
 RUN npm install
+RUN npm install -g @angular/cli
 
 # add app
-COPY . /usr/src/app
+COPY . /app
 
 EXPOSE 4200
 
 # start app
-CMD npm start
+CMD ng serve --host 0.0.0.0
