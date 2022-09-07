@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "RWjLn+QMnojtMBCf3AJxr35ml3Luh24JnoS/I+ttxi6PPqPGBaPasW0QLQjjOjMahHmP0f8UjUt2E6YMN9B7bg==",
+  "dgSpecHash": "36flLSHoEjmz7VqTHliBjfiZKhVWE1jyNF5tACcnxm6lq1P3cP98AuhguzrfU8+l0Hc4rAJe+13EBY9zq/Zxbw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Benjamin\\source\\repos\\AngularTest\\AngularTest-Backend\\AngularTest-Backend\\AngularTest-Backend.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Benjamin\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.17.0\\microsoft.visualstudio.azure.containers.tools.targets.1.17.0.nupkg.sha512"
+  ],
   "logs": []
 }
