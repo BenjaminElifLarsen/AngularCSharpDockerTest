@@ -12,7 +12,7 @@ export class BackendService {
   constructor(private http: HttpClient) { }
 
   public test(){
-    return this.http.get("https://localhost:7057/", {
+    return this.http.get("http://localhost:7057/", {
       responseType: 'text'
 });
   }
