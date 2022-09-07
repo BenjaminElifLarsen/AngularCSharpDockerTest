@@ -4,10 +4,11 @@ services:
   angulartest-backend:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=//+:80 
-      #https://+:443;http:
+      - ASPNETCORE_URLS=http://+:7057
+      #https://+:443;
     ports:
-      - "80"
+      - "7057"
+      #- "80"
       #- "443"z
     #volumes:
     #  - ${APPDATA}/Microsoft/UserSecrets:C:\Users\ContainerUser\AppData\Roaming\Microsoft\UserSecrets:ro
