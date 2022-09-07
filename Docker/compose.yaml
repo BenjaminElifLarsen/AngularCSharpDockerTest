@@ -1,0 +1,9 @@
+services:
+  backend:
+  
+
+  frontend:
+    depends_on:
+      - backend
+    port:4700:80
+    restart: always
