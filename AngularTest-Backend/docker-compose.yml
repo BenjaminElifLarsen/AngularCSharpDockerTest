@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   angulartest-backend:
-    #image: ${DOCKER_REGISTRY-}angulartestbackend
+    image: beela/angular-csharp-test-backend:latest
     build:
       context: .
       dockerfile: AngularTest-Backend\Dockerfile
@@ -13,6 +13,6 @@ services:
   frontend:
     depends_on:
       - angulartest-backend
-    build: ./../AngularTest-Frontend
+    image: beela/angular-csharp-test-frontend:latest
     ports:
       - 4200:4200

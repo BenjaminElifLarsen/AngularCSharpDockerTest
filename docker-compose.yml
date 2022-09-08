@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  frontend:
+    depends_on:
+      - angulartest-backend
+    image: beela/angular-csharp-test-frontend:latest
+    restart: always
+    ports:
+      - 80:4200
+      - 443:4200
+
+  angulartest-backend:
+    image: beela/angular-csharp-test-backend:latest
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:7057
+    restart: always
+    ports:
+      - 7057:7057
+      
+
