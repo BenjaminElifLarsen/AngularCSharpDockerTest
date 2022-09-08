@@ -7,8 +7,7 @@ services:
     image: beela/angular-csharp-test-frontend:latest
     restart: always
     ports:
-      - 80:4200
-      - 443:4200
+      - 80:80
 
   angulartest-backend:
     image: beela/angular-csharp-test-backend:latest
