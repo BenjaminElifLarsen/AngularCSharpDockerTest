@@ -7,6 +7,7 @@ FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
+EXPOSE 7057
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
@@ -15,13 +16,9 @@ RUN dotnet restore "AngularTest-Backend/AngularTest-Backend.csproj"
 COPY . .
 WORKDIR "/src/AngularTest-Backend"
 RUN dotnet build "AngularTest-Backend.csproj" -c Release -o /app/build
-RUN dotnet dev-certs https
-RUN dotnet dev-certs https --trust
 
 FROM build AS publish
 RUN dotnet publish "AngularTest-Backend.csproj" -c Release -o /app/publish /p:UseAppHost=false
-RUN dotnet dev-certs https
-RUN dotnet dev-certs https --trust
 
 FROM base AS final
 WORKDIR /app
